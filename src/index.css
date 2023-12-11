@@ -1,7 +1,6 @@
 * {
   box-sizing: border-box;
   font-family: "Outfit", sans-serif;
-  font-style: normal;
 }
 
 body {
@@ -18,16 +17,19 @@ ul {
   list-style: none;
 }
 
+main {
+  width: calc(100% - 166px);
+}
+
 header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 96px;
-  height: 100vh;
+  height: 960px;
   border-radius: 20px;
   background-color: #161d2f;
-
   padding: 35px 32px;
 }
 
@@ -61,7 +63,7 @@ header svg:hover {
 
 .container {
   display: flex;
-  padding: 36px;
+  padding: 36px 0 0 36px;
   gap: 36px;
 }
 
@@ -71,7 +73,7 @@ input {
   font-weight: 300;
   color: #ffffff;
   background-color: transparent;
-  width: 1184px;
+  width: 1100px;
   border: 0px;
   border-bottom: 1px solid #5a698f;
   padding: 5px;
@@ -93,4 +95,129 @@ input {
 
 input:focus {
   outline: none;
+}
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 36px;
+}
+
+.popularMovies {
+  display: flex;
+  gap: 40px;
+  overflow-x: hidden;
+}
+
+.banner {
+  min-width: 470px;
+  height: 230px;
+  position: relative;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 300;
+  border-radius: 8px;
+}
+.movieBanner {
+  width: 280px;
+  position: relative;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 300;
+  border-radius: 8px;
+}
+
+.details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+}
+
+.info {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3px;
+  opacity: 0.75;
+}
+
+.movieInfo {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 3px;
+  opacity: 0.75;
+  align-items: center;
+}
+
+.bookMark {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  height: 36px;
+  width: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: rgba(16, 20, 30, 0.5);
+}
+
+.movieBookMark {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  height: 36px;
+  width: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: rgba(16, 20, 30, 0.5);
+}
+
+.bookMark:hover,
+.movieBookMark:hover {
+  background-color: #fff;
+  color: black;
+}
+
+.bookMark svg {
+  font-size: 20px;
+}
+.info p {
+  margin: 0;
+}
+.movieInfo p {
+  margin: 8px 0 5px 0;
+  font-size: 13px;
+}
+
+.movieDetails h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.type {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+}
+
+h1 {
+  font-size: 32px;
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: -0.5px;
+  margin: 35px 0 25px;
 }
