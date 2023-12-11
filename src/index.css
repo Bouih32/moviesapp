@@ -1,3 +1,96 @@
-h1 {
-  color: red;
+* {
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #10141e;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 96px;
+  height: 100vh;
+  border-radius: 20px;
+  background-color: #161d2f;
+
+  padding: 35px 32px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header svg {
+  width: 30px;
+  height: 30px;
+  color: #5a698f;
+  margin-bottom: 40px;
+}
+header svg:hover {
+  color: #fc4747;
+}
+.logo {
+  width: 50px;
+  height: 37px;
+  color: #fc4747;
+  margin-bottom: 75px;
+}
+
+.user {
+  width: 50px;
+  height: 38px;
+  margin-bottom: 0;
+}
+
+.container {
+  display: flex;
+  padding: 36px;
+  gap: 36px;
+}
+
+input {
+  font-size: 24px;
+  opacity: 0.4979;
+  font-weight: 300;
+  color: #ffffff;
+  background-color: transparent;
+  width: 1184px;
+  border: 0px;
+  border-bottom: 1px solid #5a698f;
+  padding: 5px;
+  caret-color: #fc4747;
+}
+
+.search {
+  display: flex;
+  gap: 24px;
+  padding-top: 32px;
+  align-items: center;
+}
+
+.searchIcon {
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+}
+
+input:focus {
+  outline: none;
 }
