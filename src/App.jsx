@@ -17,9 +17,6 @@ function App() {
         <h1>Trending</h1>
         <div className="popularMovies">
           <PopularBanner />
-          <PopularBanner />
-          <PopularBanner />
-          <PopularBanner />
         </div>
         <h1>Recommended for you</h1>
         <div className="movies">
