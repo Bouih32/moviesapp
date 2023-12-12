@@ -51,6 +51,11 @@ export default function PopularBanner() {
         <FaRegBookmark />
       </div>
 
+      <div className="moreInfo">
+        <FaBookOpen />
+        <h6>More</h6>
+      </div>
+
       <div className="details">
         <div className="info">
           <p>2019</p>
