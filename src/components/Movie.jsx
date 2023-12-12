@@ -11,11 +11,14 @@ export default function Movie() {
       <div className="movieBookMark">
         <FaRegBookmark />
       </div>
-      <div className="moreInfo">
-        <FaBookOpen />
-        <h6>More</h6>
+
+      <div className="movieImage">
+        <img src={rect} alt="somthing" />
+        <div className="moreInfo">
+          <FaBookOpen />
+          <h6>More</h6>
+        </div>
       </div>
-      <img src={rect} alt="somthing" />
 
       <div className="movieDetails">
         <div className="movieInfo">
