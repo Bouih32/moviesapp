@@ -106,6 +106,7 @@ input:focus {
   display: flex;
   gap: 40px;
   overflow-x: hidden;
+  width: 85vw;
 }
 
 .banner {
@@ -220,4 +221,116 @@ h1 {
   font-weight: 300;
   letter-spacing: -0.5px;
   margin: 35px 0 25px;
+}
+@media only screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 56px;
+    background-color: #161d2f;
+    border-radius: 0;
+    flex-direction: row;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  header svg {
+    width: 25px;
+    height: 25px;
+    color: #5a698f;
+    margin: 0;
+    margin-left: 20px;
+  }
+
+  .logo {
+    width: 35px;
+    height: 35px;
+    color: #fc4747;
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+
+  .user {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 0;
+  }
+
+  input {
+    font-size: 16px;
+    width: 214px;
+    border: 0px;
+    border-bottom: none;
+    letter-spacing: -0.312px;
+    padding: 0;
+  }
+
+  .search {
+    gap: 16px;
+    padding-left: 16px;
+    padding-top: 0;
+    display: flex;
+    width: 70vw;
+  }
+
+  .searchIcon {
+    width: 30px;
+    height: 30px;
+  }
+
+  h1 {
+    font-size: 23px;
+    margin: 24px 0 16px;
+    width: 90vw;
+  }
+  main {
+    padding: 0 16px;
+  }
+
+  .movies {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .popularMovies {
+    gap: 16px;
+    width: 90vw;
+  }
+
+  .banner {
+    width: 240px;
+    height: 180px;
+    background-size: cover;
+    font-size: 16px;
+  }
+  .banner .title {
+    font-size: 18px;
+  }
+
+  .banner .details {
+    padding: 18px;
+  }
+  .movieBanner {
+    width: 164px;
+    font-size: 12px;
+  }
+
+  .movieBanner img {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 14px;
+  }
 }

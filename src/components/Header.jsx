@@ -6,8 +6,8 @@ import { MdMovie } from "react-icons/md";
 export default function Header() {
   return (
     <header>
+      <MdMovie className="logo" />
       <nav>
-        <MdMovie className="logo" />
         <PiSquaresFourFill />
         <TbMovie />
         <PiTelevisionBold />
