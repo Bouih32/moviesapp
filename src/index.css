@@ -147,7 +147,7 @@ input:focus {
 }
 
 .banner:hover::before,
-.movieImage:hover::before {
+.movieBanner:hover .movieImage::before {
   display: block;
 }
 .movieBanner {

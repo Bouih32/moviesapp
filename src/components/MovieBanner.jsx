@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Movie from "./Movie";
-import { Link } from "react-router-dom";
 
 export default function MovieBanner({ full }) {
   const [movie, setMovie] = useState("");
@@ -40,20 +39,29 @@ export default function MovieBanner({ full }) {
     }
   }
 
+  //   function toggleMarked(id) {
+  //     setMovie((prev) =>
+  //       prev.map((thing) => {
+  //         return thing.id === id ? { ...thing, marked: !thing.marked } : thing;
+  //       })
+  //     );
+  //   }
+
   console.log(allmovies);
   return (
     <>
       {allmovies &&
         allmovies.map((movie) => {
           return (
-            <Link to={`/movie/${movie.id}`} key={movie.id}>
-              <Movie
-                name={movie.name}
-                poster={movie.poster}
-                date={movie.date}
-                id={movie.id}
-              />
-            </Link>
+            <Movie
+              key={movie.id}
+              name={movie.name}
+              poster={movie.poster}
+              date={movie.date}
+              id={movie.id}
+              marked={movie.marked}
+              setMovie={setMovie}
+            />
           );
         })}
     </>
