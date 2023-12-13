@@ -119,7 +119,16 @@ input:focus {
 
 .movieImage {
   position: relative;
+  height: 174px;
+  overflow: hidden;
+  border-radius: 8px;
+  object-fit: cover;
 }
+.movieImage img {
+  width: 100%;
+  height: 100%;
+}
+
 .banner::before,
 .movieImage::before {
   content: "";
@@ -413,8 +422,9 @@ h1 {
     display: none !important;
   }
 
-  .movieBanner img {
+  .movieImage img {
     width: 100%;
+    height: 100%;
   }
 
   .title {

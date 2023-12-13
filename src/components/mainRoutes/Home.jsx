@@ -1,5 +1,6 @@
 import PopularBanner from "../PopularBanner";
-import Movie from "../Movie";
+
+import MovieBanner from "../MovieBanner";
 
 export default function Home() {
   return (
@@ -7,17 +8,7 @@ export default function Home() {
       <PopularBanner />
       <h1>Recommended for you</h1>
       <div className="movies">
-        <Movie />
-        <Movie />
-        <Movie />
-        <Movie />
-        <Movie />
-        <Movie />
-        <Movie />
-        <Movie />
-        <Movie />
-        <Movie />
-        <Movie />
+        <MovieBanner />
       </div>
     </>
   );

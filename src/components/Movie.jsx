@@ -2,16 +2,15 @@ import { FaRegBookmark, FaBookOpen } from "react-icons/fa";
 import { TbMovie } from "react-icons/tb";
 
 import { BsDot } from "react-icons/bs";
-import rect from "../../public/Rectangle.png";
 
-export default function Movie() {
+export default function Movie({ name, date, poster }) {
   return (
     <div className="movieBanner">
       <div className="movieImage">
         <div className="movieBookMark">
           <FaRegBookmark />
         </div>
-        <img src={rect} alt="somthing" />
+        <img src={poster} alt="somthing" />
         <div className="moreInfo">
           <FaBookOpen />
           <h6>More</h6>
@@ -20,11 +19,11 @@ export default function Movie() {
 
       <div className="movieDetails">
         <div className="movieInfo">
-          <p>2019</p>
+          <p>{date}</p>
           <BsDot />
           <div className="type">
             <TbMovie />
-            <p>Movie</p>
+            <p>{name}</p>
           </div>
           <BsDot />
           <p>PG</p>

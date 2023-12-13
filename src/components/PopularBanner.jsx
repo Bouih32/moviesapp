@@ -15,7 +15,7 @@ export default function PopularBanner() {
         .then((res) => res.json())
         .then((data) => {
           let popularFive = [];
-          for (let i = 0; i < 7; i++) {
+          for (let i = 0; i < 5; i++) {
             popularFive.push(data.results[i]);
           }
 
@@ -43,8 +43,6 @@ export default function PopularBanner() {
     slidesToShow: 2.4,
     slidesToScroll: 1,
   };
-
-  console.log(info);
 
   return (
     <>
