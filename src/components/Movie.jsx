@@ -1,10 +1,19 @@
 import { FaRegBookmark, FaBookOpen, FaBookmark } from "react-icons/fa";
+import { PiTelevisionDuotone } from "react-icons/pi";
 import { TbMovie } from "react-icons/tb";
 
 import { BsDot } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
-export default function Movie({ name, date, poster, id, setMovie, marked }) {
+export default function Movie({
+  name,
+  date,
+  poster,
+  id,
+  setMovie,
+  marked,
+  serie,
+}) {
   function toggleSelected(id) {
     setMovie((prev) =>
       prev.map((thing) => {
@@ -15,12 +24,8 @@ export default function Movie({ name, date, poster, id, setMovie, marked }) {
   return (
     <div className="movieBanner">
       <div className="movieImage">
-        <div className="movieBookMark">
-          {marked ? (
-            <FaBookmark onClick={() => toggleSelected(id)} />
-          ) : (
-            <FaRegBookmark onClick={() => toggleSelected(id)} />
-          )}
+        <div className="movieBookMark" onClick={() => toggleSelected(id)}>
+          {marked ? <FaBookmark /> : <FaRegBookmark />}
         </div>
         <img src={poster} alt="somthing" />
         <div className="moreInfo">
@@ -34,8 +39,9 @@ export default function Movie({ name, date, poster, id, setMovie, marked }) {
           <p>{date}</p>
           <BsDot />
           <div className="type">
-            <TbMovie />
-            <p>PG</p>
+            {serie ? <PiTelevisionDuotone /> : <TbMovie />}
+
+            <p>{serie ? "TV Series" : "Movie"}</p>
           </div>
           <BsDot />
           <p>PG</p>

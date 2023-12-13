@@ -7,6 +7,7 @@ import Layout from "./components/mainRoutes/Layout";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/mainRoutes/Home";
 import MovieBanner from "./components/MovieBanner";
+import SeriesBanner from "./components/SeriesBanner";
 
 function App() {
   return (
@@ -16,12 +17,23 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />}></Route>
             <Route
-              path="/movies"
+              path="movies"
               element={
                 <>
                   <h1>Movies</h1>
                   <div className="movies">
                     <MovieBanner full />
+                  </div>
+                </>
+              }
+            ></Route>
+            <Route
+              path="series"
+              element={
+                <>
+                  <h1>Series</h1>
+                  <div className="movies">
+                    <SeriesBanner full />
                   </div>
                 </>
               }
