@@ -3,36 +3,22 @@
 // import { TbMovie } from "react-icons/tb";
 // import { MdMovie } from "react-icons/md";
 
-import PopularBanner from "./components/PopularBanner";
-import Header from "./components/Header";
-import Search from "./components/Search";
+import Layout from "./components/mainRoutes/Layout";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./components/mainRoutes/Home";
 import Movie from "./components/Movie";
 
 function App() {
   return (
     <div className="container">
-      <Header />
-      <main>
-        <Search />
-        <h1>Trending</h1>
-        <div className="popularMovies">
-          <PopularBanner />
-        </div>
-        <h1>Recommended for you</h1>
-        <div className="movies">
-          <Movie />
-          <Movie />
-          <Movie />
-          <Movie />
-          <Movie />
-          <Movie />
-          <Movie />
-          <Movie />
-          <Movie />
-          <Movie />
-          <Movie />
-        </div>
-      </main>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />}></Route>
+            <Route path="/movies" element={<Movie />}></Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

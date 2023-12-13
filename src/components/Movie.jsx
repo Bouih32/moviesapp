@@ -1,4 +1,3 @@
-import { PiTelevisionDuotone } from "react-icons/pi";
 import { FaRegBookmark, FaBookOpen } from "react-icons/fa";
 import { TbMovie } from "react-icons/tb";
 
@@ -8,11 +7,10 @@ import rect from "../../public/Rectangle.png";
 export default function Movie() {
   return (
     <div className="movieBanner">
-      <div className="movieBookMark">
-        <FaRegBookmark />
-      </div>
-
       <div className="movieImage">
+        <div className="movieBookMark">
+          <FaRegBookmark />
+        </div>
         <img src={rect} alt="somthing" />
         <div className="moreInfo">
           <FaBookOpen />

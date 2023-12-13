@@ -1,10 +1,9 @@
-import { PiTelevisionDuotone } from "react-icons/pi";
 import { FaRegBookmark, FaBookOpen } from "react-icons/fa";
 import { TbMovie } from "react-icons/tb";
 
 import { BsDot } from "react-icons/bs";
 
-export default function Popu({ name, date, poster }) {
+export default function Popular({ name, date, poster }) {
   const styles = {
     backgroundImage: `url(${poster})`,
     backgroundSize: "cover",

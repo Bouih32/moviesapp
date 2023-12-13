@@ -1,8 +1,9 @@
-import Popu from "./Popu";
+import Popular from "./Popular";
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 
 export default function PopularBanner() {
   const [info, setInfo] = useState("");
@@ -46,19 +47,23 @@ export default function PopularBanner() {
   console.log(info);
 
   return (
-    <Slider {...settings}>
-      {info &&
-        info.map((thing) => {
-          return (
-            <Popu
-              key={thing.id}
-              name={thing.name}
-              poster={thing.poster}
-              date={thing.date}
-              id={thing.id}
-            />
-          );
-        })}
-    </Slider>
+    <>
+      <h1>Trending</h1>
+      <Slider {...settings}>
+        {info &&
+          info.map((thing) => {
+            return (
+              <Link to={`/movies/${thing.id}`} key={thing.id}>
+                <Popular
+                  name={thing.name}
+                  poster={thing.poster}
+                  date={thing.date}
+                  id={thing.id}
+                />
+              </Link>
+            );
+          })}
+      </Slider>
+    </>
   );
 }
