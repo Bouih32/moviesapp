@@ -2,7 +2,7 @@ import Popular from "./Popular";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Link, useOutletContext } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 
 export default function PopularBanner() {
   const { info, setInfo } = useOutletContext();
@@ -22,14 +22,15 @@ export default function PopularBanner() {
         {info &&
           info.map((thing) => {
             return (
-              <Link to={`/movies/${thing.id}`} key={thing.id}>
-                <Popular
-                  name={thing.name}
-                  poster={thing.poster}
-                  date={thing.date}
-                  id={thing.id}
-                />
-              </Link>
+              <Popular
+                key={thing.id}
+                name={thing.name}
+                poster={thing.poster}
+                date={thing.date}
+                id={thing.id}
+                setInfo={setInfo}
+                marked={thing.marked}
+              />
             );
           })}
       </Slider>

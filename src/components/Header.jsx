@@ -3,6 +3,8 @@ import { FaBookmark, FaUserCircle } from "react-icons/fa";
 import { TbMovie } from "react-icons/tb";
 import { MdMovie } from "react-icons/md";
 import { NavLink } from "react-router-dom";
+import anime from "../../public/anime.png";
+import animeActive from "../../public/animeSelected.png";
 
 export default function Header() {
   const headerStyle = {
@@ -27,6 +29,16 @@ export default function Header() {
             <PiTelevisionBold style={isActive ? headerStyle : null} />
           )}
         </NavLink>
+        <NavLink to="/anime">
+          {({ isActive }) =>
+            isActive ? (
+              <img src={animeActive} className="anime" />
+            ) : (
+              <img src={anime} className="anime" />
+            )
+          }
+        </NavLink>
+
         <NavLink to="/bookmarked">
           {({ isActive }) => (
             <FaBookmark

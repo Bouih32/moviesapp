@@ -28,10 +28,13 @@ export default function Movie({
           {marked ? <FaBookmark /> : <FaRegBookmark />}
         </div>
         <img src={poster} alt="somthing" />
-        <div className="moreInfo">
-          <FaBookOpen />
-          <h6>More</h6>
-        </div>
+        <Link to={`/movie/${id}`}>
+          <div className="moreInfo">
+            <FaBookOpen />
+
+            <h6>More</h6>
+          </div>
+        </Link>
       </div>
 
       <div className="movieDetails">
@@ -43,12 +46,9 @@ export default function Movie({
 
             <p>{serie ? "TV Series" : "Movie"}</p>
           </div>
-          <BsDot />
-          <p>PG</p>
         </div>
-        <Link to={`/movie/${id}`}>
-          <h2 className="title">{name}</h2>
-        </Link>
+
+        <h2 className="title">{name}</h2>
       </div>
     </div>
   );

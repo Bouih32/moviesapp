@@ -1,13 +1,11 @@
-// import { PiTelevisionDuotone, PiSquaresFourFill } from "react-icons/pi";
-// import { FaRegBookmark, FaBookmark ,FaBookOpen,FaUserCircle,FaSearch} from "react-icons/fa";
-// import { TbMovie } from "react-icons/tb";
-// import { MdMovie } from "react-icons/md";
-
 import Layout from "./components/mainRoutes/Layout";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/mainRoutes/Home";
 import MovieBanner from "./components/MovieBanner";
 import SeriesBanner from "./components/SeriesBanner";
+import SearchPage from "./components/mainRoutes/SearchPage";
+import BookMarked from "./components/mainRoutes/BookMarked";
+import AnimePage from "./components/mainRoutes/AnimePage";
 
 function App() {
   return (
@@ -38,6 +36,9 @@ function App() {
                 </>
               }
             ></Route>
+            <Route path="search" element={<SearchPage />}></Route>
+            <Route path="bookmarked" element={<BookMarked />}></Route>
+            <Route path="anime" element={<AnimePage />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>

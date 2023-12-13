@@ -11,6 +11,7 @@ body {
 
 a {
   text-decoration: none;
+  color: white;
 }
 
 ul {
@@ -67,6 +68,11 @@ header svg:hover {
   padding: 36px 0 0 36px;
   gap: 36px;
 }
+.anime {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 40px;
+}
 
 input {
   font-size: 24px;
@@ -112,7 +118,7 @@ input:focus {
   font-size: 19px;
   font-weight: 300;
   border-radius: 8px;
-  cursor: pointer;
+
   background-position: center;
   background-size: cover;
 }
@@ -157,7 +163,7 @@ input:focus {
   font-size: 15px;
   font-weight: 300;
   border-radius: 8px;
-  cursor: pointer;
+
   padding-bottom: 16px;
 }
 
@@ -175,7 +181,7 @@ input:focus {
   transform: translate(-50%, -50%);
   gap: 15px;
   display: none;
-  z-index: 4;
+  cursor: pointer;
 }
 
 .moreInfo h6 {
@@ -243,7 +249,7 @@ input:focus {
   align-items: center;
   border-radius: 50%;
   background-color: rgba(16, 20, 30, 0.5);
-  z-index: 5000;
+  cursor: pointer;
 }
 
 .bookMark:hover,
@@ -317,7 +323,8 @@ h1 {
     flex-direction: row;
   }
 
-  header svg {
+  header svg,
+  .anime {
     width: 25px;
     height: 25px;
     color: #5a698f;
@@ -336,7 +343,7 @@ h1 {
     color: #fc4747;
     margin-bottom: 0;
     margin-left: 0;
-    margin-right: 37px;
+    margin-right: 18px;
   }
 
   .user {
