@@ -28,6 +28,7 @@ export default function Layout() {
   const bookMarkedMovies = useMarked(movie);
   const bookMarkedSeries = useMarked(serie);
   const bookMarkedSearch = useMarked(searchResults);
+  const bookMarkedAnime = useMarked(anime);
 
   console.log(searchedMovie.title);
 
@@ -55,6 +56,7 @@ export default function Layout() {
             bookMarkedSearch,
             anime,
             setAnime,
+            bookMarkedAnime,
           }}
         />
       </main>

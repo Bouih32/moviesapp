@@ -10,30 +10,30 @@ export default function useSearch(fixedString) {
         .then((res) => res.json())
         .then((data) => {
           setSearchResults(
-            // data.results
-            data.results.map((movie) => {
-              let dateArr =
-                movie.media_type === "movie"
-                  ? movie.release_date.split("-")
-                  : movie.first_air_date.split("-");
-              return movie.media_type === "movie"
-                ? {
-                    id: movie.id,
-                    name: movie.original_title,
-                    poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
-                    date: dateArr[0],
-                    marked: false,
-                    type: movie.media_type,
-                  }
-                : {
-                    id: movie.id,
-                    name: movie.name,
-                    poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
-                    date: dateArr[0],
-                    marked: false,
-                    type: movie.media_type,
-                  };
-            })
+            data &&
+              data.results.map((movie) => {
+                let dateArr =
+                  movie.media_type === "movie"
+                    ? movie.release_date.split("-")
+                    : movie.first_air_date.split("-");
+                return movie.media_type === "movie"
+                  ? {
+                      id: movie.id,
+                      name: movie.original_title,
+                      poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+                      date: dateArr[0],
+                      marked: false,
+                      type: movie.media_type,
+                    }
+                  : {
+                      id: movie.id,
+                      name: movie.name,
+                      poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+                      date: dateArr[0],
+                      marked: false,
+                      type: movie.media_type,
+                    };
+              })
           );
         });
     }

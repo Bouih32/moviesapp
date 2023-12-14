@@ -9,28 +9,52 @@ export default function BookMarked() {
     setSerie,
     bookMarkedSearch,
     setSearchResults,
+    bookMarkedAnime,
+    setAnime,
   } = useOutletContext();
 
+  const onlyMarkedMoviesSearch =
+    bookMarkedSearch &&
+    bookMarkedSearch.map((movie) => {
+      return movie.type === "movie" ? (
+        <Movie
+          key={movie.id}
+          name={movie.name}
+          poster={movie.poster}
+          date={movie.date}
+          id={movie.id}
+          marked={movie.marked}
+          setMovie={setSearchResults}
+          full
+        />
+      ) : null;
+    });
+
+  const onlyMakedSeriesSearch =
+    bookMarkedSearch &&
+    bookMarkedSearch.map((movie) => {
+      return movie.type !== "movie" ? (
+        <Movie
+          key={movie.id}
+          name={movie.name}
+          poster={movie.poster}
+          date={movie.date}
+          id={movie.id}
+          marked={movie.marked}
+          setMovie={setSearchResults}
+          full
+          serie
+        />
+      ) : null;
+    });
+
   return (
-    <>
-      <h1>Your bookmarked movies and TV series :</h1>
+    <div>
+      {(bookMarkedMovies.length !== 0 ||
+        onlyMarkedMoviesSearch.length !== 0) && <h1>Bookmarked movies </h1>}
 
       <div className="movies">
-        {bookMarkedSearch &&
-          bookMarkedSearch.map((movie) => {
-            return movie.type === "movie" ? (
-              <Movie
-                key={movie.id}
-                name={movie.name}
-                poster={movie.poster}
-                date={movie.date}
-                id={movie.id}
-                marked={movie.marked}
-                setMovie={setSearchResults}
-                full
-              />
-            ) : null;
-          })}
+        {onlyMarkedMoviesSearch}
 
         {bookMarkedMovies &&
           bookMarkedMovies.map((movie) => {
@@ -48,24 +72,12 @@ export default function BookMarked() {
           })}
       </div>
 
-      {bookMarkedSearch &&
-        bookMarkedSearch.map((movie) => {
-          return movie.type !== "movie" ? (
-            <Movie
-              key={movie.id}
-              name={movie.name}
-              poster={movie.poster}
-              date={movie.date}
-              id={movie.id}
-              marked={movie.marked}
-              setMovie={setSearchResults}
-              full
-              serie
-            />
-          ) : null;
-        })}
+      {(bookMarkedSeries.length !== 0 ||
+        onlyMarkedMoviesSearch.length !== 0) && <h1>Bookmarked TV series</h1>}
 
       <div className="movies">
+        {onlyMakedSeriesSearch}
+
         {bookMarkedSeries &&
           bookMarkedSeries.map((movie) => {
             return (
@@ -81,6 +93,25 @@ export default function BookMarked() {
             );
           })}
       </div>
-    </>
+      {bookMarkedAnime.length !== 0 && <h1>Bookmarked Anime</h1>}
+      <div className="movies">
+        {bookMarkedAnime &&
+          bookMarkedAnime.map((movie) => {
+            return movie.type !== "movie" ? (
+              <Movie
+                key={movie.id}
+                name={movie.name}
+                poster={movie.poster}
+                date={movie.date}
+                id={movie.id}
+                marked={movie.marked}
+                setMovie={setAnime}
+                full
+                serie
+              />
+            ) : null;
+          })}
+      </div>
+    </div>
   );
 }
