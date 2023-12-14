@@ -37,7 +37,14 @@ function App() {
               }
             ></Route>
             <Route path="search" element={<SearchPage />}></Route>
-            <Route path="bookmarked" element={<BookMarked />}></Route>
+            <Route
+              path="bookmarked"
+              element={
+                <>
+                  <BookMarked />
+                </>
+              }
+            ></Route>
             <Route path="anime" element={<AnimePage />}></Route>
           </Route>
         </Routes>
