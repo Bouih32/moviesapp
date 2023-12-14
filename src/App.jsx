@@ -6,7 +6,8 @@ import SeriesBanner from "./components/SeriesBanner";
 import SearchPage from "./components/mainRoutes/SearchPage";
 import BookMarked from "./components/mainRoutes/BookMarked";
 import AnimePage from "./components/mainRoutes/AnimePage";
-
+import Error from "./components/mainRoutes/Error";
+import MovieDetails from "./components/mainRoutes/MovieDetails";
 function App() {
   return (
     <div className="container">
@@ -46,6 +47,8 @@ function App() {
               }
             ></Route>
             <Route path="anime" element={<AnimePage />}></Route>
+            <Route path="movie/:id" element={<MovieDetails />}></Route>
+            <Route path="*" element={<Error />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>

@@ -439,3 +439,17 @@ h1 {
     font-size: 14px;
   }
 }
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.error img {
+  height: 400px;
+  width: 400px;
+  border-radius: 5px;
+}

@@ -6,7 +6,7 @@ export default function SearchPage() {
 
   console.log(searchResults);
 
-  return (
+  return searchResults.length !== 0 ? (
     <>
       <h1>Movies Found</h1>
       <div className="movies">
@@ -47,5 +47,7 @@ export default function SearchPage() {
           })}
       </div>
     </>
+  ) : (
+    <h1>No results were found</h1>
   );
 }
