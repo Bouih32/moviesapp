@@ -46,7 +46,17 @@ function App() {
                 </>
               }
             ></Route>
-            <Route path="anime" element={<AnimePage />}></Route>
+            <Route
+              path="anime"
+              element={
+                <>
+                  <h1>Anime</h1>
+                  <div className="movies">
+                    <AnimePage />
+                  </div>
+                </>
+              }
+            ></Route>
             <Route path="movie/:id" element={<MovieDetails />}></Route>
             <Route path="*" element={<Error />}></Route>
           </Route>

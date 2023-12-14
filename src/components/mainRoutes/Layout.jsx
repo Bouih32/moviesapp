@@ -6,6 +6,7 @@ import useFetchSeries from "../hooks/useFetchSeries";
 import { useState } from "react";
 import useMarked from "../hooks/useMarked";
 import useSearch from "../hooks/useSearch";
+import useFetchAnime from "../hooks/useFetchAnime";
 
 export default function Layout() {
   const [searchedMovie, setSearchedMovie] = useState({ title: "" });
@@ -23,6 +24,7 @@ export default function Layout() {
   const [info, setInfo] = useFetchData(popularUrl);
   const [serie, setSerie] = useFetchSeries(seriesUrl);
   const [searchResults, setSearchResults] = useSearch(searchedMovie.title);
+  const [anime, setAnime] = useFetchAnime();
   const bookMarkedMovies = useMarked(movie);
   const bookMarkedSeries = useMarked(serie);
   const bookMarkedSearch = useMarked(searchResults);
@@ -51,6 +53,8 @@ export default function Layout() {
             searchResults,
             setSearchResults,
             bookMarkedSearch,
+            anime,
+            setAnime,
           }}
         />
       </main>

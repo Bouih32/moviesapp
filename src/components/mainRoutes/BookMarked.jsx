@@ -13,7 +13,7 @@ export default function BookMarked() {
 
   return (
     <>
-      <h1>BookMarked movies</h1>
+      <h1>Your bookmarked movies and TV series :</h1>
 
       <div className="movies">
         {bookMarkedSearch &&
@@ -47,8 +47,6 @@ export default function BookMarked() {
             );
           })}
       </div>
-
-      <h1>BookMarked series</h1>
 
       {bookMarkedSearch &&
         bookMarkedSearch.map((movie) => {
