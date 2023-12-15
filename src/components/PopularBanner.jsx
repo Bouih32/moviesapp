@@ -40,20 +40,19 @@ export default function PopularBanner() {
           partialVisible={false}
           dotListClass="custom-dot-list-style"
         >
-          {info &&
-            info.map((thing) => {
-              return (
-                <Popular
-                  key={thing.id}
-                  name={thing.name}
-                  poster={thing.poster}
-                  date={thing.date}
-                  id={thing.id}
-                  setInfo={setInfo}
-                  marked={thing.marked}
-                />
-              );
-            })}
+          {info.map((thing) => {
+            return (
+              <Popular
+                key={thing.id}
+                name={thing.name}
+                poster={thing.poster}
+                date={thing.date}
+                id={thing.id}
+                setInfo={setInfo}
+                marked={thing.marked}
+              />
+            );
+          })}
         </Carousel>
       )}
     </>
