@@ -13,7 +13,7 @@ export default function PopularBanner() {
     },
     tablet: {
       breakpoint: { max: 1800, min: 464 },
-      items: 2.5,
+      items: 2.4,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
