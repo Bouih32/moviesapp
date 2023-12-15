@@ -418,25 +418,7 @@ h1 {
     padding-top: 0;
     width: 70vw;
   }
-  .slick-list {
-    position: relative;
-    display: block;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    height: 180px !important;
-  }
-  .slick-track {
-    width: 2804.4px !important;
-    transform: translate3d(-344.4px, 0, 0) important;
-  }
-  .slick-slide {
-    outline: 0 !important;
-    width: 246px !important;
-  }
-  .slick-slide > div {
-    margin: 0 40px !important;
-  }
+
   .searchIcon {
     width: 25px;
     height: 25px;
