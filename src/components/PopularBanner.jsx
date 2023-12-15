@@ -14,7 +14,7 @@ export default function PopularBanner() {
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 4.2,
+      items: 3.8,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
