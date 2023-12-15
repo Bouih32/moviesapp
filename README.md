@@ -1,4 +1,4 @@
-Title: A React Movie/TV Series/Anime App with TMDB & Jikan APIs
+A React Movie/TV Series/Anime App with TMDB & Jikan APIs
 
 Features:
 
