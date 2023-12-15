@@ -7,18 +7,13 @@ import { useOutletContext } from "react-router-dom";
 export default function PopularBanner() {
   const { info, setInfo } = useOutletContext();
   const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
     desktop: {
-      breakpoint: { max: 5000, min: 1990 },
+      breakpoint: { max: 5000, min: 1800 },
       items: 3.4,
     },
     tablet: {
-      breakpoint: { max: 1990, min: 464 },
-      items: 2.4,
+      breakpoint: { max: 1800, min: 464 },
+      items: 2.5,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
