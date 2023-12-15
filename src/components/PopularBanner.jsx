@@ -13,11 +13,11 @@ export default function PopularBanner() {
       items: 5,
     },
     desktop: {
-      breakpoint: { max: 3000, min: 2000 },
-      items: 4.4,
+      breakpoint: { max: 5000, min: 1990 },
+      items: 3.4,
     },
     tablet: {
-      breakpoint: { max: 2000, min: 464 },
+      breakpoint: { max: 1990, min: 464 },
       items: 2.4,
     },
     mobile: {
@@ -40,20 +40,19 @@ export default function PopularBanner() {
           partialVisible={false}
           dotListClass="custom-dot-list-style"
         >
-          {info &&
-            info.map((thing) => {
-              return (
-                <Popular
-                  key={thing.id}
-                  name={thing.name}
-                  poster={thing.poster}
-                  date={thing.date}
-                  id={thing.id}
-                  setInfo={setInfo}
-                  marked={thing.marked}
-                />
-              );
-            })}
+          {info.map((thing) => {
+            return (
+              <Popular
+                key={thing.id}
+                name={thing.name}
+                poster={thing.poster}
+                date={thing.date}
+                id={thing.id}
+                setInfo={setInfo}
+                marked={thing.marked}
+              />
+            );
+          })}
         </Carousel>
       )}
     </>
