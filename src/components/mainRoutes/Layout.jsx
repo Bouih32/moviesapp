@@ -30,8 +30,6 @@ export default function Layout() {
   const bookMarkedSearch = useMarked(searchResults);
   const bookMarkedAnime = useMarked(anime);
 
-  console.log(searchedMovie.title);
-
   return (
     <>
       <Header />

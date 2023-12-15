@@ -13,6 +13,7 @@ export default function Movie({
   setMovie,
   marked,
   serie,
+  anime,
 }) {
   function toggleSelected(id) {
     setMovie((prev) =>
@@ -28,7 +29,9 @@ export default function Movie({
           {marked ? <FaBookmark /> : <FaRegBookmark />}
         </div>
         <img src={poster} alt="somthing" />
-        <Link to={`/movie/${id}`}>
+        <Link
+          to={serie ? `/serie/${id}` : anime ? `/anime/${id}` : `/movie/${id}`}
+        >
           <div className="moreInfo">
             <FaBookOpen />
 

@@ -8,6 +8,8 @@ import BookMarked from "./components/mainRoutes/BookMarked";
 import AnimePage from "./components/mainRoutes/AnimePage";
 import Error from "./components/mainRoutes/Error";
 import MovieDetails from "./components/mainRoutes/MovieDetails";
+import SerieDetails from "./components/mainRoutes/SerieDetails";
+import AnimeDetails from "./components/mainRoutes/AnimeDetails";
 function App() {
   return (
     <div className="container">
@@ -58,6 +60,8 @@ function App() {
               }
             ></Route>
             <Route path="movie/:id" element={<MovieDetails />}></Route>
+            <Route path="serie/:id" element={<SerieDetails />}></Route>
+            <Route path="anime/:id" element={<AnimeDetails />}></Route>
             <Route path="*" element={<Error />}></Route>
           </Route>
         </Routes>

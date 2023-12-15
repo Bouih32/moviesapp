@@ -17,6 +17,7 @@ export default function AnimePage() {
               marked={movie.marked}
               setMovie={setAnime}
               full
+              anime
             />
           ) : null;
         })}

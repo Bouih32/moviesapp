@@ -3,20 +3,22 @@ import { BsDot } from "react-icons/bs";
 import { useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
+import { nanoid } from "nanoid";
 
-export default function MovieDetails() {
+export default function SerieDetails() {
   const param = useParams().id;
-  const [singleDetails, setSingleDetails] = useState("");
+  const [singleSerieDetails, setSingleSerieDetails] = useState("");
   useEffect(() => {
     function getMovie() {
       fetch(
-        `https://api.themoviedb.org/3/movie/${param}?api_key=e655686855d1eedc52815665de6de7f6`
+        `https://api.themoviedb.org/3/tv/${param}?api_key=e655686855d1eedc52815665de6de7f6`
       )
         .then((res) => res.json())
         .then((data) => {
           data &&
-            setSingleDetails(() => {
-              let dateArr = data.release_date.split("-");
+            setSingleSerieDetails(() => {
+              let dateArr = data.first_air_date.split("-");
+
               let genre = [];
 
               data.genres.map((thing) => {
@@ -24,13 +26,13 @@ export default function MovieDetails() {
               });
 
               return {
-                name: data.original_title,
+                name: data.original_name,
                 poster: `https://image.tmdb.org/t/p/w500${data.poster_path}`,
                 date: dateArr[0],
                 overview: data.overview,
                 runtime: data.runtime,
                 score: data.vote_average,
-                moviegenre: genre,
+                Moviegenre: genre,
               };
             });
         });
@@ -39,8 +41,8 @@ export default function MovieDetails() {
     getMovie();
   }, [param]);
 
-  const { name, date, score, moviegenre, poster, overview, runtime } =
-    singleDetails;
+  const { name, date, score, Moviegenre, poster, overview, runtime } =
+    singleSerieDetails;
   return (
     <div className="singleMovieDetails">
       <img src={poster} alt="poster" />
@@ -60,10 +62,10 @@ export default function MovieDetails() {
         </div>
 
         <div className="genre">
-          {moviegenre &&
-            moviegenre.map((thing) => (
+          {Moviegenre &&
+            Moviegenre.map((thing) => (
               <>
-                <p key={thing.id}>{thing} </p> <BsDot />
+                <p key={nanoid()}>{thing} </p> <BsDot />
               </>
             ))}
         </div>

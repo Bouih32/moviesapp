@@ -107,7 +107,7 @@ export default function BookMarked() {
                 marked={movie.marked}
                 setMovie={setAnime}
                 full
-                serie
+                anime
               />
             ) : null;
           })}

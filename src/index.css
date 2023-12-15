@@ -316,7 +316,7 @@ h1 {
 
 .singleMovieDetails {
   display: flex;
-  padding: 30px;
+  padding: 70px 30px;
   gap: 40px;
 }
 

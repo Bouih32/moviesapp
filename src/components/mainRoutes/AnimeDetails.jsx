@@ -3,33 +3,32 @@ import { BsDot } from "react-icons/bs";
 import { useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
+import { nanoid } from "nanoid";
 
-export default function MovieDetails() {
+export default function AnimeDetails() {
   const param = useParams().id;
-  const [singleDetails, setSingleDetails] = useState("");
+  const [singleAnimeDetails, setSingleAnimeDetails] = useState("");
   useEffect(() => {
     function getMovie() {
-      fetch(
-        `https://api.themoviedb.org/3/movie/${param}?api_key=e655686855d1eedc52815665de6de7f6`
-      )
+      fetch(`https://api.jikan.moe/v4/anime/${param}/full`)
         .then((res) => res.json())
         .then((data) => {
           data &&
-            setSingleDetails(() => {
-              let dateArr = data.release_date.split("-");
+            setSingleAnimeDetails(() => {
               let genre = [];
 
-              data.genres.map((thing) => {
+              data.data.genres.map((thing) => {
                 genre.push(thing.name);
               });
 
               return {
-                name: data.original_title,
-                poster: `https://image.tmdb.org/t/p/w500${data.poster_path}`,
-                date: dateArr[0],
-                overview: data.overview,
-                runtime: data.runtime,
-                score: data.vote_average,
+                name: data.data.title,
+                poster: data.data.images.jpg.image_url,
+                date: data.data.year,
+                overview: data.data.synopsis,
+                runtime: data.data.duration,
+                score: data.data.score,
+                episodes: data.data.episodes,
                 moviegenre: genre,
               };
             });
@@ -39,8 +38,10 @@ export default function MovieDetails() {
     getMovie();
   }, [param]);
 
-  const { name, date, score, moviegenre, poster, overview, runtime } =
-    singleDetails;
+  console.log(singleAnimeDetails);
+
+  const { name, date, score, poster, overview, runtime, episodes, moviegenre } =
+    singleAnimeDetails;
   return (
     <div className="singleMovieDetails">
       <img src={poster} alt="poster" />
@@ -51,7 +52,9 @@ export default function MovieDetails() {
           <p>{date}</p>
         </div>
         <div className="score">
-          <p>{runtime} min</p>
+          <p>{episodes} ep</p>
+          <BsDot />
+          <p>{runtime}</p>
           <BsDot />
           <div>
             <p>{score}</p>
@@ -63,7 +66,7 @@ export default function MovieDetails() {
           {moviegenre &&
             moviegenre.map((thing) => (
               <>
-                <p key={thing.id}>{thing} </p> <BsDot />
+                <p key={nanoid()}>{thing} </p> <BsDot />
               </>
             ))}
         </div>
