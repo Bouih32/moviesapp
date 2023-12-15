@@ -14,11 +14,11 @@ export default function PopularBanner() {
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 2.4,
+      items: 3.4,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
+      breakpoint: { max: 2000, min: 464 },
+      items: 2.4,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
